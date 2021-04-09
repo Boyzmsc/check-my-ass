@@ -2,6 +2,6 @@
 
 Manage Assignment Schedule & Analysing Data
 
-[ ] Website
-[ ] Android App
-[ ] Ios App
+- [ ] Website
+- [ ] Android App
+- [ ] Ios App
