@@ -22,13 +22,47 @@ browser.find_element_by_name('loginbutton').click()
 # Assignment
 ass_info = []
 
-# for i in range(0,8):
-  browser.find_element_by_css_selector("#page-content > div > div > section.col-lg-8.col-xl-9.col-dash > div > div > div > div.my-course-lists > div > div > div:nth-child(2)").click()
+courses_cnt = len(browser.find_elements_by_css_selector("a[class = 'course-link']"))
+
+for i in range(courses_cnt):
+  courses = browser.find_elements_by_css_selector("a[class = 'course-link']")
+  course = courses[i]
+
+  # Course name
+  check_idx = course.text.find('정규 강좌')
+  if(check_idx == -1):
+    continue
+  l_idx = course.text.find('진행중') + 4
+  r_idx = course.text.find('(') - 1
+  course_name = course.text[l_idx : r_idx]
+
+  hasAss = False
+  # browser.find_element_by_css_selector("#page-content > div > div > section.col-lg-8.col-xl-9.col-dash > div > div > div > div.my-course-lists > div > div > div:nth-child(" + i + ")").click()
+  course.click()
   btn_links = browser.find_elements_by_class_name('btn-link')
   for link in btn_links:
     if(link.text == '과제'):
       link.click()
+      hasAss = True
       break
   
+  if(hasAss):
+    ass_names = browser.find_elements_by_css_selector("td[class = 'cell c1']")
+    ass_due_date = browser.find_elements_by_css_selector("td[class = 'cell c2']")
+    ass_complete = browser.find_elements_by_css_selector("td[class = 'cell c3']")
 
-# browser.find_element(By.TEXT, '과제').click()
+    for j in range(len(ass_names)):
+      if(ass_complete[j].text != '제출 완료'):
+        ass_data = {
+          '강의명' : course_name,         
+          '과제명' : ass_names[j].text,
+          '종료 일시' : ass_due_date[j].text
+        }
+        ass_info.append(ass_data)
+
+    browser.back()
+  browser.back()
+
+for ass in ass_info:
+  print(ass, end = '\n')
+
