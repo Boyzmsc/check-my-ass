@@ -28,7 +28,7 @@ for i in range(courses_cnt):
   courses = browser.find_elements_by_css_selector("a[class = 'course-link']")
   course = courses[i]
 
-  # Course name
+  # Course Name
   check_idx = course.text.find('정규 강좌')
   if(check_idx == -1):
     continue
@@ -37,7 +37,6 @@ for i in range(courses_cnt):
   course_name = course.text[l_idx : r_idx]
 
   hasAss = False
-  # browser.find_element_by_css_selector("#page-content > div > div > section.col-lg-8.col-xl-9.col-dash > div > div > div > div.my-course-lists > div > div > div:nth-child(" + i + ")").click()
   course.click()
   btn_links = browser.find_elements_by_class_name('btn-link')
   for link in btn_links:
@@ -63,6 +62,7 @@ for i in range(courses_cnt):
     browser.back()
   browser.back()
 
+# Check Results
 for ass in ass_info:
   print(ass, end = '\n')
 
