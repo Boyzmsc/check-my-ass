@@ -1,57 +1,34 @@
+from bs4 import BeautifulSoup as bs
 from selenium import webdriver
-import requests
-from bs4 import BeautifulSoup
 
-browser = webdriver.Chrome("chromedriver")
+options = webdriver.ChromeOptions()
+options.add_experimental_option("excludeSwitches", ["enable-logging"])
+# options .add_argument('headless')
+browser = webdriver.Chrome(options=options)
 
-# 1. 로그인 페이지 이동
-browser.get("https://ecampus.kookmin.ac.kr/login/index.php")
+# Login
+browser.get("https://ecampus.kookmin.ac.kr/login/")
 
-# 2. 로그인
-browser.find_element_by_id("input-username").send_keys("boyzmsc")
-browser.find_element_by_id("input-password").send_keys("qwerasdf0101^^")
+login_info = {
+  'loginId' : 'boyzmsc',
+  'loginPwd' : 'qwerasdf0101^^'
+}
 
-browser.find_element_by_name("loginbutton").click()
+browser.find_element_by_name('loginId').send_keys(login_info['loginId'])
+browser.find_element_by_name('loginPwd').send_keys(login_info['loginPwd'])
 
-# 3. 강의-과제 페이지
-course_ids = browser.find_element_by_css_selector(
-    "#page-content > div > div > section.col-lg-8.col-xl-9.col-dash > div > div > div > div.my-course-lists > div > div"
-)
+browser.find_element_by_name('loginbutton').click()
 
-# browser.find_element_by_css_selector(
-#     "#page-content > div > div > section.col-lg-8.col-xl-9.col-dash > div > div > div > div.my-course-lists > div > div > div:nth-child(7) > a"
-# ).click()
+# Assignment
+ass_info = []
 
-# # 4. 과제 페이지
-# browser.find_element_by_css_selector(
-#     "#module-activities > ul > li:nth-child(2) > a"
-# ).click()
+# for i in range(0,8):
+  browser.find_element_by_css_selector("#page-content > div > div > section.col-lg-8.col-xl-9.col-dash > div > div > div > div.my-course-lists > div > div > div:nth-child(2)").click()
+  btn_links = browser.find_elements_by_class_name('btn-link')
+  for link in btn_links:
+    if(link.text == '과제'):
+      link.click()
+      break
+  
 
-
-# login_url = "https://ecampus.kookmin.ac.kr/login/index.php"
-# craw_url = "https://ecampus.kookmin.ac.kr/calendar/view.php?view=month&cal_m=05"
-
-# session = requests.session()
-
-# params = dict()
-# params["loginId"] = "boyzmsc"
-# params["loginPwd"] = "qwerasdf0101^^"
-
-# login = session.post(login_url, data=params)
-# login.raise_for_status()
-
-# # print(login.headers)
-# # print(session.cookies.get_dict())
-
-# login = session.get(craw_url)
-
-# soup = BeautifulSoup(login.text, "html.parser")
-
-# data = soup.select_one(
-#     "#month-detailed-6096262cb40ed6096262c1b5ad2 > tbody > tr:nth-child(2) > td:nth-child(3) > div.d-none.d-md-block.hidden-phone.text-xs-center > div > ul > li:nth-child(1) > a > span.eventname"
-# )
-
-# print(data.get_text())
-
-# for item in data:
-#     print(item.get_text())
+# browser.find_element(By.TEXT, '과제').click()
