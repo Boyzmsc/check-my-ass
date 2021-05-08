@@ -1,5 +1,6 @@
 {
   "python.pythonPath": "C:\\Users\\MSC\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
   "python.autoComplete.addBrackets": true,
-  "python.jediEnabled": false
+"python.jediEnabled": false,
+"python.languageServer": "Microsoft"
 }
