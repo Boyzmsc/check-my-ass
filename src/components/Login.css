@@ -1,0 +1,100 @@
+html {
+  height : 100vh;
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+div {
+  position: relative;
+}
+
+div .login-form {
+  position: absolute;
+  width: 450px;
+  height : 400px;
+  left: 0;
+  right: 0;
+  top: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+}
+
+div .login-form .login-section {
+  position: absolute;
+  width: 450px;
+  height : 400px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div .login-form .login-section h2{
+  font-size: xx-large;
+  color :rgb(237, 233, 233);
+  text-shadow: 3px 3px 6px grey;
+  text-align: center;
+}
+
+div .login-form .login-section .loginId {
+  display: block;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 60px;
+  border : 2px solid rgb(223, 214, 214);
+  border-radius: 5px;
+  font-size: x-large;
+  box-shadow: 1px 1px 3px grey;
+  box-align: center;
+}
+
+div .login-form .login-section .loginId::placeholder {
+  color :rgb(174, 169, 169);
+  text-align: center;
+}
+
+div .login-form .login-section .loginPwd {
+  display: block;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 60px;
+  border : 2px solid rgb(223, 214, 214);
+  border-radius: 5px;
+  font-size: x-large;
+  box-shadow: 1px 1px 3px grey;
+}
+div .login-form .login-section .loginPwd::placeholder {
+  color :rgb(174, 169, 169);
+  text-align: center;
+}
+
+div .login-form .login-section .loginBtn {
+  width: 405px;
+  height: 50px;
+  display: block;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(237, 233, 233);
+  border : 2px solid rgb(223, 214, 214);
+  border-radius: 5px;
+  font-size: x-large;
+  color :rgb(174, 169, 169);
+  box-shadow: 1px 1px 3px grey;
+  transition: all 0.4s;
+}
+
+div .login-form .login-section .loginBtn:hover {
+  color :white;
+  background-color: rgb(223, 214, 214);
+}

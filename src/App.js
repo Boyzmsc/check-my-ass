@@ -1,25 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import {Component} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Login from './components/Login';
+
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      loginId : '',
+      loginPwd : '',
+      mode: 'welcome',
+      selected_content_id: 3,
+      subject: { title: "WEB", sub: "World Wide Web!" },
+      welcome: { title: "Welcome", desc: "Hello, React!!" },
+      contents: [
+        { id: 1, title: 'HTML', desc: 'HTML is for information' },
+        { id: 2, title: 'CSS', desc: 'CSS is for design' },
+        { id: 3, title: 'JavaScript', desc: 'JavaScript is for interactive' }
+      ]
+    };
+  }
+
+  render(){
+    return(
+      <div className="App">
+        <Login
+          onSubmit={function (l_id, l_pwd) {
+            this.setState({
+              loginId : l_id,
+              loginPwd : l_pwd
+            })
+          }.bind(this)}>
+        </Login>
+      </div>
+    );
+  }
 }
 
 export default App;
