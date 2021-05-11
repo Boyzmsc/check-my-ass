@@ -1,6 +1,5 @@
 html {
-  height : 100vh;
-  background-image: url(../images/bg.jpg);
+  background-image: url(../images/login_bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -37,6 +36,27 @@ div .login-form .login-section h2{
   color :rgb(237, 233, 233);
   text-shadow: 3px 3px 6px grey;
   text-align: center;
+}
+
+div .login-form .login-section .loginUniv {
+  display: block;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 60px;
+  border : 2px solid rgb(223, 214, 214);
+  border-radius: 5px;
+  font-size: x-large;
+  box-shadow: 1px 1px 3px grey;
+  font-weight: bold;
+}
+
+div .login-form .login-section .loginUniv::placeholder {
+  color :rgb(174, 169, 169);
+  text-align: center;
+  font-weight: bold;
 }
 
 div .login-form .login-section .loginId {
