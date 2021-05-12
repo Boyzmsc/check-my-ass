@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
+import time
 
 options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
@@ -25,8 +26,12 @@ ass_info = []
 courses_cnt = len(browser.find_elements_by_css_selector("a[class = 'course-link']"))
 
 for i in range(courses_cnt):
-  courses = browser.find_elements_by_css_selector("a[class = 'course-link']")
-  course = courses[i]
+  try:
+    courses = browser.find_elements_by_class_name('course-link')
+    course = courses[i]
+  except IndexError:
+    courses = browser.find_elements_by_class_name('course-link')
+    course = courses[i]
 
   # Course Name
   check_idx = course.text.find('정규 강좌')
