@@ -30,10 +30,13 @@ def crawling():
 
   browser.find_element_by_name('loginId').send_keys(login_info['loginId'])
   browser.find_element_by_name('loginPwd').send_keys(login_info['loginPwd'])
-
   browser.find_element_by_name('loginbutton').click()
-
-  courses_cnt = len(browser.find_elements_by_css_selector("a[class = 'course-link']"))
+  
+  try:
+    courses_cnt = len(browser.find_elements_by_css_selector("a[class = 'course-link']"))
+  except Exception as e:
+    print("로그인 실패")
+    return False
 
   for i in range(courses_cnt):
     courses = browser.find_elements_by_class_name('course-link')
@@ -76,6 +79,8 @@ def crawling():
 
       browser.back()
     browser.back()
+
+  return True
 
 def print_ass(arr):
   # Check Results
@@ -129,18 +134,18 @@ if __name__ == "__main__":
     set_login()
 
     # Crawling Assignment
-    crawling()
-    print("----------------")
-    
-    print_ass(ass_info)
-    print("----------------")
+    if crawling():
+      print("----------------")
 
-    ass_sorted_time = sort_ass_time(ass_info)
-    print_ass(ass_sorted_time)
-    print("----------------")
+      print_ass(ass_info)
+      print("----------------")
 
-    ass_sorted_name = sort_ass_name(ass_info)
-    print_ass(ass_sorted_name)
-    print("----------------")
+      ass_sorted_time = sort_ass_time(ass_info)
+      print_ass(ass_sorted_time)
+      print("----------------")
 
-    search_ass(ass_info)
+      ass_sorted_name = sort_ass_name(ass_info)
+      print_ass(ass_sorted_name)
+      print("----------------")
+
+      search_ass(ass_info)
