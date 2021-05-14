@@ -1,0 +1,10 @@
+html {
+  background-image: url(../images/login_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+div {
+  position: relative;
+}

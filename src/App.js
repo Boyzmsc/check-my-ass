@@ -32,6 +32,7 @@ class App extends Component {
             })
           }.bind(this)}>
         </Login>
+        <Main></Main>
       </div>
     );
   }
