@@ -2,6 +2,7 @@ import './App.css';
 import {Component} from 'react';
 
 import Login from './components/Login';
+import Main from './components/Main';
 
 class App extends Component {
   constructor(props){
@@ -32,7 +33,6 @@ class App extends Component {
             })
           }.bind(this)}>
         </Login>
-        <Main></Main>
       </div>
     );
   }
