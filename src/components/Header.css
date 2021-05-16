@@ -8,9 +8,10 @@ div .top-header {
   font-weight: 500;
   padding: 3px;
   padding-bottom: 5px;
+  padding-left: 5px;
 }
 
 div .header-line {
   background-color: black;
-  height : 2px;
+  height : 1px;
 }

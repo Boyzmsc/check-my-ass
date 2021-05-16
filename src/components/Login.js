@@ -4,7 +4,7 @@ import './Login.css';
 class Login extends Component {
   render() {
     return (
-      <div>
+      <div className="Login">
         <form action = "/create_process" method = "post" class = "login-form"
           onSubmit = {function (e){
             this.props.onSubmit(
