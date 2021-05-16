@@ -1,0 +1,16 @@
+.Header{
+  height : 28px;
+}
+
+div .top-header {
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 3px;
+  padding-bottom: 5px;
+}
+
+div .header-line {
+  background-color: black;
+  height : 2px;
+}
