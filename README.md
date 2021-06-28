@@ -3,7 +3,7 @@
 Manage Assignment Schedule & Analyzing Data
 
 ## Implementation
-- [ ] Login Component
+- [X] Login Component
 - [ ] Main Component
 - [ ] Create Component
 - [ ] Calendar Component
