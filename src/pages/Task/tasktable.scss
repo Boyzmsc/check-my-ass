@@ -1,0 +1,26 @@
+.task-record {
+  .task-record-title {
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .task-record-content {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .task-record-date {
+    width: 160px;
+  }
+
+  .task-record-action {
+    width: 140px;
+    .task-record-action-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

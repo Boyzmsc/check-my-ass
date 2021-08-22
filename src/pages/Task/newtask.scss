@@ -1,0 +1,21 @@
+.btn-new-task {
+  font-weight: 500;
+}
+
+#new-task-modal {
+  .modal-title {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .modal-body {
+    .col-form-label {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  #new-task-content {
+    min-height: 180px;
+  }
+}
