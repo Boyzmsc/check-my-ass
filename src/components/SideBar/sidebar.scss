@@ -1,8 +1,10 @@
-@import '~react-pro-sidebar/dist/scss/styles.scss';
+$sidebar-width: 250px;
+
+@import "../../../node_modules/react-pro-sidebar/dist/scss/styles.scss";
 
 .sidebar-main {
     height: 100%;
-    width: 270px;
+    width: $sidebar-width;
     position: absolute;
     left: 0;
     top: 0

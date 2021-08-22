@@ -1,5 +1,6 @@
 /* eslint-disable react/style-prop-object */
 import React, { Component } from "react";
+import { Link, withRouter } from 'react-router-dom';
 
 import {
   FaTachometerAlt,
@@ -23,26 +24,37 @@ import "./sidebar.scss"
 class SideBar extends Component {
   render() {
     return (
-      <div>
+      <>
         <ProSidebar className = "sidebar-main">
           <SidebarHeader className = "sidebar-header">
-            <a href = "./" className = "home-text">Check My Ass</a>
+            <a href = "/dashboard" className = "home-text">Check My Ass</a>
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="circle">
-              <MenuItem className = "menuitem" icon={<FaTachometerAlt />}>Dashboard</MenuItem>
-              <MenuItem className = "menuitem" icon={<FaGraduationCap />}>Assignment</MenuItem>
-              <MenuItem className = "menuitem" icon={<FaRegListAlt />}>Task</MenuItem>
-              <MenuItem className = "menuitem" icon={<FaRegCalendarAlt />}>Calendar</MenuItem>
+              <MenuItem className = "menuitem" icon={<FaTachometerAlt />}>
+                <Link to="/dashboard">Dashboard</Link>
+              </MenuItem>
+
+              <MenuItem className = "menuitem" icon={<FaGraduationCap />}>
+                <Link to="/assignment">Assignment</Link>
+              </MenuItem>
+
+              <MenuItem className = "menuitem" icon={<FaRegListAlt />}>
+                <Link to="/task">Task</Link>
+              </MenuItem>
+
+              <MenuItem className = "menuitem" icon={<FaRegCalendarAlt />}>
+                <Link to="/calendar">Calendar</Link>
+              </MenuItem>
             </Menu>
           </SidebarContent>
           <SidebarFooter className = "sidebar-footer">
           <a href = "https://ecampus.kookmin.ac.kr/" target = "_blank" className = "univ-text">Kookmin University</a>
           </SidebarFooter>
         </ProSidebar>
-      </div>
+      </>
     );
   }
 }
 
-export default SideBar;
+export default withRouter(SideBar);
