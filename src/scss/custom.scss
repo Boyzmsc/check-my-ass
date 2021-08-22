@@ -1,3 +1,7 @@
-@import "../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/functions";
 
 $dark : #1d1d1d;
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
