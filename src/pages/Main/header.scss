@@ -1,37 +1,58 @@
-.navbar{
+.main-navbar{
     background-color: #1d1d1d; 
     height: 73px;
+
+    .nav-link {
+        margin-top: 2px;
+        color : #adadad;
+        &:link{
+            color : #adadad;
+            text-decoration: none;
+        }
+        &:visited{
+            color : #adadad;
+            text-decoration: none;
+        }
+        &:hover{
+            color : #adadad;
+            text-decoration: none;
+        }
+        &:focus{
+            color : #adadad;
+            text-decoration: none;
+        }
+    }
+
+    .dropdown-menu {
+        padding: 6px 0px;
+
+        .dropdown-divider{
+            margin: 6px 0px;
+        }
+    }
+    
+    .dropdown-item {
+        color: #1d1d1d;
+        font-size: 18px;
+        font-weight: 500;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        padding-left: 14px;
+
+        &:active{
+            background-color: transparent;
+        }
+
+        .sync-icon{
+            font-size: 16px;
+            margin-right: 7px;
+        }
+
+        .logout-icon{
+            margin-right: 6px;
+            margin-bottom: 1px;
+        }
+    }
 }
 
-.main-navbar .nav-link {
-    margin-top: 2px;
-    color : #adadad;
-    &:link{
-        color : #adadad;
-        text-decoration: none;
-    }
-    &:visited{
-        color : #adadad;
-        text-decoration: none;
-    }
-    &:hover{
-        color : #adadad;
-        text-decoration: none;
-    }
-    &:focus{
-        color : #adadad;
-        text-decoration: none;
-    }
-}
-
-.dropdown-item {
-    color: #1d1d1d;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.btn-toggle-icon{
-    &:hover{
-        cursor: pointer;
-    }
-}

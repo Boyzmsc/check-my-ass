@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
+import "./scss/root.scss";
+
 import Main from './pages/Main';
+import Auth from './services/auth'
+import Database from './services/database';
+
+// const auth = new Auth();
+// const database = new Database();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <BrowserRouter>
+      <Main />
+      {/* <App auth={auth} database={database} /> */}
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
