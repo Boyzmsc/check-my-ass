@@ -1,9 +1,7 @@
-import React, {useEffect, useState} from "react";
-import formatDate from "intl-dateformat";
-import {FaRegFolder, FaRegClock, FaRegFileAlt} from "react-icons/fa";
+import React from "react";
 
-import DatePicker from "./datepicker";
-import "./header.scss";
+import DatePicker from "./DatePicker";
+import "./Header.scss";
 
 const Header = () => {
   return (

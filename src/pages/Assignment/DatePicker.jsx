@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import {FaAngleDoubleRight} from "react-icons/fa";
 
 import "react-datepicker/dist/react-datepicker.css"
-import "./datepicker.scss"
+import "./Datepicker.scss"
 
 // { setSearchDateString, setSelectedEndDateString }
 

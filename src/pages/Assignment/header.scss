@@ -1,6 +1,10 @@
 .ass-navbar{
     background-color: #fff;
     height: 65px;
+    position: relative;
+    width: 100%;
+    top:0;
+    right: 0;
 
     .dropdown-item{
         font-size: 15px;
@@ -11,21 +15,29 @@
         padding-bottom: 1px;
 
         .btn-sort{
-            border-width: 2px;
-            font-weight: 600;
+            font-weight: 500;
+        }
+
+        .dropdown-menu {
+            padding: 6px 0px;
+
+            .dropdown-divider{
+                margin: 6px 0px;
+            }
+
+            .dropdown-item{
+                font-weight: 600;
+                padding-left: 14px;
+            }
+
+            .dropdown-item:active{
+                background-color: transparent;
+            }
         }
     }
     
-    .ass-navbar{
-        position: relative;
-        width: 100%;
-        height : 55px;
-        top:0;
-        right: 0;
-    }
-    
     .container-fluid {
-        padding: 3px 14px 0px 16px;
+        padding: 4px 12px 0px 15px;
         position: absolute;   
     }
 }
