@@ -1,36 +1,30 @@
-import React, { Component } from "react";
-import { Route } from 'react-router-dom';
+import React, {Component} from "react";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {AuthProvider} from "../../components/Login/Context/AuthContext";
+import {firestore} from "../../services/firebase";
 
-import Header from "./Header";
-import Footer from "./Footer";
-import SideBar from "../../components/SideBar";
-
-import "./main.scss"
-
-import Dashboard from "../Dashboard";
-import Assignment from "../Assignment";
-import Task from "../Task";
-import Calendar from "../Calendar";
+import DashboardPage from "../Dashboard";
+import AssignmentPage from "../Assignment";
+import TaskPage from "../Task";
+import CalendarPage from "../Calendar";
+import InfoPage from "../Info";
 
 class Main extends Component {
   render() {
     return (
-      <div className="wrapper">
-        <SideBar className= "sidebar" />
-        <div className="main-panel overflow-auto">
-          <header className = "header">
-            <Header />
-          </header>
-
-          <Route path="/dashboard" component={Dashboard} />
-          <Route exact path="/assignment" component={Assignment} />
-          <Route path="/task" component={Task} />
-          <Route path="/calendar" component={Calendar} />
-
-          <footer className = "footer">
-            <Footer />
-          </footer>
-        </div>
+      <div className="main">
+        <Router>
+          <Switch>
+            <AuthProvider>
+              <Route exact path="/" component={DashboardPage} />
+              <Route path="/dashboard" component={DashboardPage} />
+              <Route path="/assignment" component={AssignmentPage} />
+              <Route path="/task" component={TaskPage} />
+              <Route path="/calendar" component={CalendarPage} />
+              <Route path="/info" component={InfoPage} />
+            </AuthProvider>
+          </Switch>
+        </Router>
       </div>
     );
   }
