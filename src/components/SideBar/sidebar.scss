@@ -3,83 +3,85 @@ $sidebar-width: 250px;
 @import "../../../node_modules/react-pro-sidebar/dist/scss/styles.scss";
 
 .sidebar-main {
-    height: 100%;
-    width: $sidebar-width;
-    position: absolute;
-    left: 0;
-    top: 0
+  height: 100%;
+  width: $sidebar-width;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .sidebar-header {
-    padding: 24px;
-    height: 73px;
-    text-transform: uppercase; 
-    font-weight: bold; 
-    font-size: 16px; 
-    letter-spacing: 1px; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap;
+  padding: 24px;
+  height: 75px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
-    .home-text{
-        color : #adadad;
-        &:link{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:visited{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:hover{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:focus{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:hover{
-            cursor: pointer;
-        }
+  .home-text {
+    color: #adadad;
+    &:link {
+      color: #adadad;
+      text-decoration: none;
     }
+    &:visited {
+      color: #adadad;
+      text-decoration: none;
+    }
+    &:hover {
+      color: #adadad;
+      text-decoration: none;
+    }
+    &:focus {
+      color: #adadad;
+      text-decoration: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.sidebar-content {
+  .menuitem {
+    margin-bottom: 4px;
+  }
 }
 
 .sidebar-footer {
-    padding: 24px;
-    text-align: left; 
-    font-size: 16px;
-    font-weight: 400; 
-    letter-spacing: 1px; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap;
-    margin-left: -1px;
+  padding: 24px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: -4px;
 
-    .univ-text{
-        color : #adadad;
-        &:link{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:visited{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:hover{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:focus{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:hover{
-            cursor: pointer;
-        }
+  .univ-text {
+    color: #adadad;
+    &:link {
+      color: #adadad;
+      text-decoration: none;
     }
-}
-
-.menuitem {
-    margin-bottom: 4px;
+    &:visited {
+      color: #adadad;
+      text-decoration: none;
+    }
+    &:hover {
+      color: #adadad;
+      text-decoration: none;
+    }
+    &:focus {
+      color: #adadad;
+      text-decoration: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

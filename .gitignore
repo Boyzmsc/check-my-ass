@@ -2,6 +2,7 @@
 
 # crawling
 crawling.js
+crawling.py
 chromedriver.exe
 
 # firebase
@@ -11,6 +12,7 @@ firebase.js
 /node_modules
 /.pnp
 .pnp.js
+.eslintcache
 
 # testing
 /coverage
