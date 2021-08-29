@@ -66,7 +66,7 @@ export default function Login() {
               <Link to="/forgot-password">Forgot Password?</Link>
             </div>
             <div className="signup-text w-100 text-center mt-2">
-              Need an account? <Link to="/signup">Sign Up</Link>
+              Need an account? &nbsp;<Link to="/signup">Sign Up</Link>
             </div>
           </div>
         </Card.Body>

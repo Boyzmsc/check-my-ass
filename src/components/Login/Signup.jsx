@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import {Form, Button, Card, Alert} from "react-bootstrap";
 import {useAuth} from "./Context/AuthContext";
 import {Link, useHistory} from "react-router-dom";
@@ -38,8 +38,6 @@ export default function SignUp() {
       <Card className="signup-card p-2 mb-5">
         <Card.Body className="signup-card-body">
           <h2 className="signup-title text-center mb-4">Sign Up</h2>
-          {/* To know signed up email
-          {currentUser.email} */}
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
@@ -81,7 +79,7 @@ export default function SignUp() {
           </Form>
           <div className="signup-footer">
             <div className="signup-text w-100 text-center mt-2">
-              Already have an account? <Link to="/login">Log In</Link>
+              Already have an account? &nbsp;<Link to="/login">Log In</Link>
             </div>
           </div>
         </Card.Body>

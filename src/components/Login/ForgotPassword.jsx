@@ -57,10 +57,10 @@ export default function ForgotPassword() {
           </Form>
           <div className="forgot-password-footer">
             <div className="w-100 text-center mt-3">
-              <Link to="/login">Log In?</Link>
+              <Link to="/login">Login?</Link>
             </div>
             <div className="signup-text w-100 text-center mt-2">
-              Need an account? <Link to="/signup">Sign Up</Link>
+              Need an account? &nbsp;<Link to="/signup">Sign Up</Link>
             </div>
           </div>
         </Card.Body>

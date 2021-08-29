@@ -1,12 +1,12 @@
 .signup-card {
-  height: 550px;
+  width: 400px;
+  height: 570px;
   background-color: #2e3033;
   box-shadow: 0 3rem 10rem rgba(#000, 0.7);
   border: 1px #2a2d30 solid;
   border-radius: 8px;
 
   .signup-card-body {
-    height: 500px;
     color: rgb(221, 221, 221);
   }
 
@@ -33,7 +33,7 @@
   }
 
   #password-confirm {
-    margin-bottom: 48px;
+    margin-bottom: 42px;
 
     .password-confirm-label {
       font-size: 17px;
@@ -47,7 +47,7 @@
 
   .signup-footer {
     position: absolute;
-    bottom: 24px;
+    bottom: 25px;
     left: 0;
     right: 0;
     margin: 0 auto;
