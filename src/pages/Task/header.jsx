@@ -1,42 +1,39 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import {FaRegArrowAltCircleUp, FaRegArrowAltCircleDown} from "react-icons/fa";
 
-import NewTask from "./newtask";
-import "./header.scss";
+import NewTaskBtn from "./Action/Add";
+import "./Header.scss";
 
-const Header = () => {
+const Header = (props) => {
+  const [sortSeq, setSortSeq] = useState(true);
+  const [sortIcon, setSortIcon] = useState();
+  const userId = props.userId;
+
+  useEffect(() => {
+    if (sortSeq) {
+      setSortIcon(<FaRegArrowAltCircleUp />);
+    } else {
+      setSortIcon(<FaRegArrowAltCircleDown />);
+    }
+    props.onSort(sortSeq);
+  }, [sortSeq]);
+
   return (
     <nav class="task-navbar navbar navbar-expand-lg">
       <div className="container-fluid align-items-center">
-        <NewTask />
+        <NewTaskBtn userId={userId} />
         <ul class="nav nav-pills">
           <li class="nav-item dropdown">
             <div class="btn-group">
-              <button type="button" class="btn-sort btn btn-outline-dark">
-                Sort
-              </button>
               <button
                 type="button"
-                class="btn-sort btn btn-outline-dark dropdown-toggle dropdown-toggle-split"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                class="btn-sort btn btn-outline-dark"
+                onClick={function () {
+                  setSortSeq(!sortSeq);
+                }.bind(this)}
               >
-                <span class="visually-hidden">Toggle Dropdown</span>
+                {sortIcon}
               </button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" href="">
-                    날짜순 (오름차순)
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="">
-                    날짜순 (내림차순)
-                  </a>
-                </li>
-              </ul>
             </div>
           </li>
         </ul>

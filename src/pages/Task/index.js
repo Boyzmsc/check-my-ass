@@ -1,33 +1,31 @@
 import React from "react";
+import {useAuth} from "../../components/Login/Context/AuthContext";
 
-import Header from "./header";
-import TaskTable from "./tasktable"
-import "./task.scss"
+import MainHeader from "../Common/MainHeader";
+import MainFooter from "../Common/MainFooter";
+import SideBar from "../../components/SideBar";
 
-const Task = () => {
+import "../Common/Main.scss";
+import Task from "./Task";
+
+function TaskPage(props) {
+  const {currentUser} = useAuth();
+  const userId = currentUser.uid;
+
   return (
-    <div className="task">
-      <Header />
-      <hr className="hr-nav" />
-      <div className = "container-table">
-        <div className="table-responsive-xxl">
-          <table class="task-table table align-middle table-bordered">
-            <thead class="table-light">
-              <tr>
-                <td>Title</td>
-                <td>Content</td>
-                <td>Last Update</td>
-                <td>Action</td>
-              </tr>
-            </thead>
-            <tbody>
-              <TaskTable />
-            </tbody>
-          </table>
-        </div>
+    <div className="wrapper">
+      <SideBar className="sidebar" />
+      <div className="main-panel overflow-auto">
+        <header className="main-header">
+          <MainHeader />
+        </header>
+        <Task userId={userId} />
+        <footer className="main-footer">
+          <MainFooter />
+        </footer>
       </div>
     </div>
   );
-};
+}
 
-export default Task;
+export default TaskPage;

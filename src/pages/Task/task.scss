@@ -1,16 +1,16 @@
 .task {
-    min-width: 100%;
-    max-width: 100%;
-    height: calc(100% - 73px);
+  min-width: 100%;
+  max-width: 100%;
+  height: calc(100% - 73px);
 
-    .container-table{
-        margin: 8px 7px 6px 8px;
-    }
+  .container-table {
+    margin: 8px 7px 6px 8px;
+  }
 
-    .hr-nav{
-        margin: 0px;
-        color: #1d1d1d; 
-        height: 1px;
-        opacity: .5;
-    }  
+  .hr-nav {
+    margin: 0px;
+    color: #1d1d1d;
+    height: 1px;
+    opacity: 0.5;
+  }
 }
