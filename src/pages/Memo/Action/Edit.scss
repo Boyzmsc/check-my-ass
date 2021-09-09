@@ -1,0 +1,21 @@
+.btn-edit-memo {
+  font-weight: 500;
+}
+
+.modal.fade {
+  .modal-title {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .modal-body {
+    .col-form-label {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  #edit-memo-content {
+    min-height: 180px;
+  }
+}
