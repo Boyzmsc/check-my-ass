@@ -1,23 +1,37 @@
-import React from "react";
-import {FaTrashAlt} from "react-icons/fa";
+import React, {useState, useEffect} from "react";
+import {firestore} from "../../../services/firebase";
+import {FaRegTrashAlt} from "react-icons/fa";
 
-import "./delete.scss";
+import "./Delete.scss";
 
-const DeleteTaskBtn = () => {
+const DeleteTaskBtn = (props) => {
+  const [taskData, setTaskData] = useState(props.data);
+
+  function deleteTask() {
+    console.log(taskData);
+    firestore
+      .collection("users")
+      .doc(props.userId)
+      .collection("task")
+      .doc(taskData.id)
+      .delete()
+      .then(() => {
+        props.onFlag();
+      });
+  }
+
   return (
     <>
-      <button
+      <FaRegTrashAlt
         type="button"
-        class="btn-delete-task btn btn-outline-danger rounded-end"
         data-bs-toggle="modal"
-        data-bs-target="#delete-task-modal"
-      >
-        <FaTrashAlt />
-      </button>
+        data-bs-target={"#delete-" + taskData.id}
+        className="task-delete-icon"
+      />
 
       <div
-        class="modal fade"
-        id="delete-task-modal"
+        class="delete-task-modal modal fade"
+        id={"delete-" + taskData.id}
         data-bs-backdrop="static"
         data-bs-keyboard="false"
         tabindex="-1"
@@ -27,9 +41,7 @@ const DeleteTaskBtn = () => {
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">
-                Delete Task
-              </h5>
+              <h5 class="modal-title">Delete Task</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -48,7 +60,14 @@ const DeleteTaskBtn = () => {
               >
                 Close
               </button>
-              <button type="button" class="btn btn-danger">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+                onClick={function () {
+                  deleteTask();
+                }}
+              >
                 Sure
               </button>
             </div>
