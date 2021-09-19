@@ -2,12 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// import Test from "./test";
-import App from "./components/Login/App";
+import Main from "./pages/Main";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Main />
   </React.StrictMode>,
   document.getElementById("root"),
 );

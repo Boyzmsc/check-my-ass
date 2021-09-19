@@ -1,58 +1,106 @@
-.main-navbar{
-    background-color: #1d1d1d; 
-    height: 73px;
+.main-navbar {
+  background-color: #1d1d1d;
+  height: 73px;
 
-    .nav-link {
-        margin-top: 2px;
-        color : #adadad;
-        &:link{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:visited{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:hover{
-            color : #adadad;
-            text-decoration: none;
-        }
-        &:focus{
-            color : #adadad;
-            text-decoration: none;
-        }
+  .login-toast {
+    box-shadow: 5px 5px 10px rgba(#000, 0.5);
+  }
+
+  .nav-link {
+    font-size: 17px;
+    margin-top: 2px;
+    margin-right: 0px;
+    color: #adadad;
+    &:link {
+      color: #adadad;
+      text-decoration: none;
+    }
+    &:visited {
+      color: #adadad;
+      text-decoration: none;
+    }
+    &:hover {
+      color: #adadad;
+      text-decoration: none;
+    }
+    &:focus {
+      color: #adadad;
+      text-decoration: none;
+    }
+  }
+
+  .dropdown-menu {
+    padding: 6px 0px;
+
+    .dropdown-divider {
+      margin: 6px 0px;
+    }
+  }
+
+  .dropdown-item {
+    color: #1d1d1d;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding-left: 14px;
+
+    &:active {
+      background-color: transparent;
     }
 
-    .dropdown-menu {
-        padding: 6px 0px;
-
-        .dropdown-divider{
-            margin: 6px 0px;
-        }
+    .sync-icon {
+      font-size: 16px;
+      margin-right: 7px;
     }
-    
-    .dropdown-item {
-        color: #1d1d1d;
-        font-size: 18px;
-        font-weight: 500;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        padding-left: 14px;
 
-        &:active{
-            background-color: transparent;
-        }
-
-        .sync-icon{
-            font-size: 16px;
-            margin-right: 7px;
-        }
-
-        .logout-icon{
-            margin-right: 6px;
-            margin-bottom: 1px;
-        }
+    .logout-icon {
+      margin-right: 6px;
+      margin-bottom: 1px;
     }
+  }
+
+  .login-modal-dialog {
+    width: 400px !important;
+
+    .modal-content {
+      height: auto !important;
+
+      .modal-header {
+        padding: 15px 18px;
+
+        .modal-title {
+          margin-top: 3px;
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+
+      .modal-body {
+        padding-top: 3px;
+        padding-bottom: 12px;
+
+        label {
+          padding-top: 12px;
+          padding-bottom: 6px;
+        }
+
+        .col-form-label {
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        .form-control {
+          height: 38px;
+        }
+
+        .login-btn {
+          font-size: 17px;
+          width: 100%;
+          height: 41px;
+        }
+      }
+    }
+  }
 }
-

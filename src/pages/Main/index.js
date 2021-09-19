@@ -1,51 +1,42 @@
-import React, {Component} from "react";
-import {BrowserRouter as Router, Switch} from "react-router-dom";
-import PrivateRoute from "../../components/Login/PrivateRoute";
+import React from "react";
+import Signup from "../../components/Login/Signup";
+import {Container} from "react-bootstrap";
 import {AuthProvider} from "../../components/Login/Context/AuthContext";
-import {useAuth} from "../../components/Login/Context/AuthContext";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
+import Login from "../../components/Login/Login";
+import ForgotPassword from "../../components/Login/ForgotPassword";
+import PrivateRoute from "../../components/Login/PrivateRoute";
 
 import DashboardPage from "../Dashboard";
 import AssignmentPage from "../Assignment";
 import TaskPage from "../Task";
-import CalendarPage from "../Calendar";
-import InfoPage from "../Info";
+import MemoPage from "../Memo";
+import AnalysisPage from "../Analysis";
+
+import "./Main.scss";
 
 export default function Main() {
-  const {currentUser} = useAuth();
-
   return (
-    <div className="main">
+    <Container className="root-body d-flex align-items-center justify-content-center">
       <Router>
-        <Switch>
-          <AuthProvider>
-            <PrivateRoute
-              exact
-              path="/"
-              component={() => <DashboardPage userId={currentUser.uid} />}
-            />
-            <PrivateRoute
-              path="/dashboard"
-              component={() => <DashboardPage userId={currentUser.uid} />}
-            />
-            <PrivateRoute
-              path="/assignment"
-              component={() => <AssignmentPage userId={currentUser.uid} />}
-            />
-            <PrivateRoute
-              path="/task"
-              component={() => <TaskPage userId={currentUser.uid} />}
-            />
-            <PrivateRoute
-              path="/calendar"
-              component={() => <CalendarPage userId={currentUser.uid} />}
-            />
-            <PrivateRoute
-              path="/info"
-              component={() => <InfoPage userId={currentUser.uid} />}
-            />
-          </AuthProvider>
-        </Switch>
+        <AuthProvider>
+          <Switch>
+            <PrivateRoute exact path="/" component={DashboardPage} />
+            <PrivateRoute path="/dashboard" component={DashboardPage} />
+            <PrivateRoute path="/assignment" component={AssignmentPage} />
+            <PrivateRoute path="/task" component={TaskPage} />
+            <PrivateRoute path="/memo" component={MemoPage} />
+            <PrivateRoute path="/analysis" component={AnalysisPage} />
+
+            <div className="login-body w-100">
+              <Route path="/signup" component={Signup} />
+              <Route path="/login" component={Login} />
+              <Route path="/forgot-password" component={ForgotPassword} />
+            </div>
+          </Switch>
+        </AuthProvider>
       </Router>
-    </div>
+    </Container>
   );
 }
