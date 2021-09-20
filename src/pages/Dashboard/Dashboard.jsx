@@ -12,7 +12,9 @@ const Dashboard = (props) => {
   const [assData, setAssData] = useState([]);
   const userId = props.userId;
 
+  ///////////////////////////////////////////////////////////////
   // Fetch data & Listen sort
+  ///////////////////////////////////////////////////////////////
   const fetchData = useCallback(() => {
     setAssData([]);
     let assList = [];
@@ -35,10 +37,32 @@ const Dashboard = (props) => {
             id: doc.id,
           });
         });
+      })
+      .then(() => {
+        firestore
+          .collection("users")
+          .doc(userId)
+          .collection("task")
+          .orderBy("lec_name")
+          .get()
+          .then((docs) => {
+            docs.forEach((doc) => {
+              assList.push({
+                status: doc.data()["status"],
+                "ass-name": doc.data()["task_name"],
+                "lec-name": doc.data()["lec_name"],
+                "due-date": new Date(doc.data()["due_date"]),
+                "ass-link": "",
+                flag: doc.data()["flag"],
+                id: doc.id,
+              });
+            });
 
-        setAssData(assList);
+            setAssData(assList);
+          });
       });
   }, []);
+  ///////////////////////////////////////////////////////////////
 
   useEffect(() => {
     fetchData();
@@ -46,6 +70,7 @@ const Dashboard = (props) => {
 
   ///////////////////////////////////////////////////////////////
   // Count completed ass
+  ///////////////////////////////////////////////////////////////
   let cntDone = 0;
   let cntMiss = 0;
   for (var i = 0; i < assData.length; i++) {
@@ -74,9 +99,11 @@ const Dashboard = (props) => {
       value: cntDone,
     },
   ];
+  ///////////////////////////////////////////////////////////////
 
   ///////////////////////////////////////////////////////////////
   // Filter ass with lec
+  ///////////////////////////////////////////////////////////////
   let lecName = [];
   let cntAss = [];
   for (var i = 0; i < assData.length; i++) {
@@ -103,9 +130,11 @@ const Dashboard = (props) => {
     obj["value"] = cntAss[i];
     checkLec.push(obj);
   }
+  ///////////////////////////////////////////////////////////////
 
   ///////////////////////////////////////////////////////////////
   // Count ass with date
+  ///////////////////////////////////////////////////////////////
   function getDateFormat(date) {
     return moment(date).format("YYYY-MM-DD");
   }
@@ -130,8 +159,8 @@ const Dashboard = (props) => {
     obj["value"] = cntDate[i];
     checkDate.push(obj);
   }
-
   ///////////////////////////////////////////////////////////////
+
   return (
     <div className="dashboard">
       <div class="card-group">
