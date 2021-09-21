@@ -1,137 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 @font-face {
   font-family: "Clock Digit";
   src: url("../../assets/fonts/digital-7.ttf");
 }
 
-.assignment{
+.assignment {
   margin-left: 1px;
 
   .card-group {
-		margin: 10px;
-  }
+    margin: 10px;
 
-  .card {
-      width : 300px;
-      height : 170px;
+    .card {
+      width: 300px;
+      height: 160px;
       max-width: 18rem;
-      color : #1d1d1d;
-  }
+      color: #1d1d1d;
+    }
 
-  .card-body{
-    position: relative;
-  }
+    .card-body {
+      position: relative;
 
-  .ass-link{
-    color : #1d1d1d;
-      &:link{
-          color : #1d1d1d;
-          text-decoration: none;
+      .card-title-tooltip,
+      .card-title {
+        &:hover {
+          cursor: default;
+        }
       }
-      &:visited{
-          color : #1d1d1d;
-          text-decoration: none;
-      }
-      &:hover{
-          color : #1d1d1d;
-          text-decoration: none;
-      }
-      &:focus{
-          color : #1d1d1d;
-          text-decoration: none;
-      }
-  }
+    }
 
-  .card-title{
-      &.ass-name{
+    .ass-link {
+      color: #1d1d1d;
+      &:link {
+        color: #1d1d1d;
+        text-decoration: none;
+      }
+      &:visited {
+        color: #1d1d1d;
+        text-decoration: none;
+      }
+      &:hover {
+        color: #1d1d1d;
+        text-decoration: none;
+      }
+      &:focus {
+        color: #1d1d1d;
+        text-decoration: none;
+      }
+    }
+
+    .card-title {
+      &.ass-name {
         position: absolute;
         top: 11px;
         left: 13px;
         font-size: 22px;
         font-weight: bold;
         margin-bottom: 10px;
-        width : 260px;
-        overflow:hidden;
+        width: 260px;
+        overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
         text-decoration: underline;
       }
-  }
-
-  .card-text{
-    &.lec-name{
-      position: absolute;
-      top: 50px;
-      font-size: 15px;
-      font-weight: 500;
-      margin-bottom: 5px;
-      margin-left: -4px;
-      width : 260px;
-      overflow:hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
     }
-    &.lec-date{
-      position: absolute;
-      top: 73px;
-      font-size: 15px;
-      font-weight: 500;
-      margin-left: -4px;
-      width : 260px;
-      overflow:hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-  }
 
-  .btn-ass{
-      font-family: "Clock Digit", "Roboto";
-      font-size: 25px;
-      font-weight: bold;
-      padding: 0px;
-      position: absolute;
-      width: 270px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      bottom: 0px;
-      margin-bottom: 8px;
-      text-align: center;
-
-      &.btn-success, &.btn-danger{
-        opacity: .9;
+    .card-text {
+      &.lec-name {
+        position: absolute;
+        top: 50px;
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        margin-left: -4px;
+        width: 260px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
-  }
-  
+      &.lec-date {
+        position: absolute;
+        top: 73px;
+        font-size: 15px;
+        font-weight: 500;
+        margin-left: -4px;
+        width: 260px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
 
-  .ass-link-icon{
-    position: absolute;
-    top: 12px;
-    right: 8px;
+    .ass-link-icon {
+      position: absolute;
+      top: 10px;
+      right: 8px;
 
-    &:hover{
-      cursor: pointer;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .lec-name-icon {
+      margin-right: 5px;
+      margin-bottom: 3px;
+      font-size: 13px;
+    }
+
+    .lec-date-icon {
+      margin-right: 6px;
+      margin-bottom: 3px;
+      font-size: 13px;
     }
   }
 
-  .lec-name-icon{
-    margin-right: 5px;
-    margin-bottom: 3px;
-    font-size: 13px;
-  }
-
-  .lec-date-icon{
-    margin-right: 6px;
-    margin-bottom: 3px;
-    font-size: 13px;
-  }
-
-  .hr-nav{
+  .hr-nav {
     margin: 0px;
-    color: #1d1d1d; 
+    color: #1d1d1d;
     height: 1px;
-    opacity: .5;
-  }  
+    opacity: 0.5;
+  }
 }
-
