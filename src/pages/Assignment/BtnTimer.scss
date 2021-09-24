@@ -1,0 +1,19 @@
+.btn-ass {
+  font-family: "Clock Digit", "Roboto";
+  font-size: 26px;
+  font-weight: bold;
+  padding: 0px;
+  position: absolute;
+  width: 270px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0px;
+  margin-bottom: 8px;
+  text-align: center;
+
+  &.btn-success,
+  &.btn-danger {
+    opacity: 0.9;
+  }
+}
