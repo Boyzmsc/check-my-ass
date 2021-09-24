@@ -1,14 +1,17 @@
 /* eslint-disable react/style-prop-object */
-import React, {Component} from "react";
-import {Link, withRouter} from "react-router-dom";
+import React from "react";
+import {Link} from "react-router-dom";
 
 import {
   FaTachometerAlt,
-  FaRegCalendarAlt,
   FaRegListAlt,
   FaGraduationCap,
+  FaChartLine,
+  FaComments,
   FaInfoCircle,
 } from "react-icons/fa";
+
+import {BiNote} from "react-icons/bi";
 
 import {
   ProSidebar,
@@ -22,52 +25,48 @@ import {
 import "react-pro-sidebar/dist/css/styles.css";
 import "./SideBar.scss";
 
-class SideBar extends Component {
-  render() {
-    return (
-      <>
-        <ProSidebar className="sidebar-main">
-          <SidebarHeader className="sidebar-header">
-            <a href="/dashboard" className="home-text">
-              Check My Ass
-            </a>
-          </SidebarHeader>
-          <SidebarContent className="sidebar-content">
-            <Menu iconShape="circle">
-              <MenuItem className="menuitem" icon={<FaTachometerAlt />}>
-                <Link to="/dashboard">Dashboard</Link>
-              </MenuItem>
+export default function SideBar() {
+  return (
+    <>
+      <ProSidebar className="sidebar-main">
+        <SidebarHeader className="sidebar-header">
+          <Link to="/dashboard" className="home-text">
+            Check My Ass
+          </Link>
+        </SidebarHeader>
+        <SidebarContent className="sidebar-content">
+          <Menu iconShape="circle">
+            <MenuItem className="menuitem" icon={<FaTachometerAlt />}>
+              <Link to="/dashboard">Dashboard</Link>
+            </MenuItem>
 
-              <MenuItem className="menuitem" icon={<FaGraduationCap />}>
-                <Link to="/assignment">Assignment</Link>
-              </MenuItem>
+            <MenuItem className="menuitem" icon={<FaGraduationCap />}>
+              <Link to="/assignment">Assignment</Link>
+            </MenuItem>
 
-              <MenuItem className="menuitem" icon={<FaRegListAlt />}>
-                <Link to="/task">Task</Link>
-              </MenuItem>
+            <MenuItem className="menuitem" icon={<FaRegListAlt />}>
+              <Link to="/task">Task</Link>
+            </MenuItem>
 
-              <MenuItem className="menuitem" icon={<FaRegCalendarAlt />}>
-                <Link to="/calendar">Calendar</Link>
-              </MenuItem>
+            <MenuItem className="menuitem" icon={<FaComments />}>
+              <Link to="/memo">Memo</Link>
+            </MenuItem>
 
-              <MenuItem className="menuitem" icon={<FaInfoCircle />}>
-                <Link to="/info">Info</Link>
-              </MenuItem>
-            </Menu>
-          </SidebarContent>
-          <SidebarFooter className="sidebar-footer">
-            <a
-              href="https://ecampus.kookmin.ac.kr/"
-              target="_blank"
-              className="univ-text"
-            >
-              Kookmin University
-            </a>
-          </SidebarFooter>
-        </ProSidebar>
-      </>
-    );
-  }
+            {/* <MenuItem className="menuitem" icon={<FaChartLine />}>
+              <Link to="/analysis">Analysis</Link>
+            </MenuItem> */}
+          </Menu>
+        </SidebarContent>
+        <SidebarFooter className="sidebar-footer">
+          <a
+            href="https://ecampus.kookmin.ac.kr/"
+            target="_blank"
+            className="univ-text"
+          >
+            Kookmin University
+          </a>
+        </SidebarFooter>
+      </ProSidebar>
+    </>
+  );
 }
-
-export default SideBar;
