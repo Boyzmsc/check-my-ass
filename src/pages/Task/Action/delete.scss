@@ -1,0 +1,24 @@
+.task-delete-icon {
+  color: #1d1d1d;
+  font-size: 16px;
+  position: absolute;
+  top: 9px;
+  right: 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.delete-task-modal {
+  .modal-title {
+    margin-top: 2px;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .modal-body {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}

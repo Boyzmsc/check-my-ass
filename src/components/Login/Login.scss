@@ -1,0 +1,51 @@
+.login-card {
+  width: 400px;
+  height: 520px;
+  background-color: #2e3033;
+  box-shadow: 0 3rem 10rem rgba(#000, 0.7);
+  border: 1px #2a2d30 solid;
+  border-radius: 8px;
+
+  .login-card-body {
+    color: rgb(221, 221, 221);
+  }
+
+  .login-title {
+    font-size: 30px;
+    margin-top: 2px;
+    margin-bottom: 24px;
+  }
+
+  #email {
+    margin-bottom: 24px;
+
+    .email-label {
+      font-size: 17px;
+    }
+  }
+
+  #password {
+    margin-bottom: 42px;
+
+    .password-label {
+      font-size: 17px;
+    }
+  }
+
+  .login-btn {
+    height: 40px;
+    font-size: 17px;
+  }
+
+  .login-footer {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    .signup-text {
+      color: rgb(221, 221, 221);
+    }
+  }
+}

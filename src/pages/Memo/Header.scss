@@ -1,0 +1,49 @@
+.memo-navbar {
+  background-color: #fff;
+  height: 65px;
+  position: relative;
+  width: 100%;
+  top: 0;
+  right: 0;
+
+  .dropdown-item {
+    font-size: 15px;
+  }
+
+  .btn-group {
+    padding-right: 2px;
+    padding-bottom: 1px;
+    height: 38px;
+
+    .btn-sort {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 17px;
+      font-weight: 500;
+      padding: 6px 10px 6px 10px;
+    }
+
+    .dropdown-menu {
+      padding: 6px 0px;
+
+      .dropdown-divider {
+        margin: 6px 0px;
+      }
+
+      .dropdown-item {
+        font-weight: 600;
+        padding-left: 14px;
+      }
+
+      .dropdown-item:active {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .container-fluid {
+    padding: 4px 12px 0px 15px;
+    position: absolute;
+  }
+}
