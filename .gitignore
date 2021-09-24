@@ -1,12 +1,17 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# test
+test*.jsx
+test*.js
+
 # crawling
 crawling.js
 crawling.py
 chromedriver.exe
 
 # firebase
-firebase.js
+*.json
+.firebase
 
 # dependencies
 /node_modules

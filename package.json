@@ -1,7 +1,7 @@
 {
   "name": "check-my-ass",
-  "type": "module",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@nivo/calendar": "^0.73.0",
@@ -10,8 +10,12 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "body-parser": "^1.19.0",
     "bootstrap": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "firebase": "^8.10.0",
+    "firebase-admin": "^9.11.1",
     "firebase-tools": "^9.16.5",
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",
@@ -27,6 +31,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "server": "node ./server/server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
