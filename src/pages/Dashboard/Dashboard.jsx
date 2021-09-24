@@ -144,10 +144,10 @@ const Dashboard = (props) => {
   for (var i = 0; i < assData.length; i++) {
     let ass = assData[i];
     let date = getDateFormat(ass["due-date"]);
-    if (assDate.indexOf(date) === -1) {
+    if (assDate.indexOf(date) === -1 && ass["status"] === "Progress") {
       assDate.push(date);
       cntDate.push(1);
-    } else if (assDate.indexOf(date) !== -1) {
+    } else if (assDate.indexOf(date) !== -1 && ass["status"] === "Progress") {
       cntDate[assDate.indexOf(date)] += 1;
     }
   }
