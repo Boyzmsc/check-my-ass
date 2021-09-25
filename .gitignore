@@ -4,14 +4,18 @@
 test*.jsx
 test*.js
 
+# server
+server/server.js
+
 # crawling
 crawling.js
-crawling.py
 chromedriver.exe
 
 # firebase
 *.json
 .firebase
+.firebaserc
+firestore.rules
 
 # dependencies
 /node_modules
