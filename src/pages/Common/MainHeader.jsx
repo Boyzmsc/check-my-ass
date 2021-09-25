@@ -20,10 +20,10 @@ export default function MainHeader() {
 
   const univ_list = {
     "Kookmin University": "KMU",
-    "Seoul National University": "SNU",
-    "Yonsei University": "YONSEI",
-    "Korea University": "KOREA",
-    "Sungkyunkwan University": "SKKU",
+    // "Seoul National University": "SNU",
+    // "Yonsei University": "YONSEI",
+    // "Korea University": "KOREA",
+    // "Sungkyunkwan University": "SKKU",
   };
 
   const univ_items = [];
@@ -39,7 +39,7 @@ export default function MainHeader() {
 
   function updateDB(u, id, pwd) {
     if (id === "" || pwd === "") {
-      setToastText("Login Failed! Please rewrite login or password.");
+      setToastText("Login Failed! Please Retry Crawling!");
       setShow(true);
     } else {
       const requestOptions = {
@@ -55,6 +55,7 @@ export default function MainHeader() {
       };
 
       // Fetch data & Reset firestore
+      // fetch("https://server-cma.herokuapp.com/api", requestOptions)
       fetch("http://localhost:7777/api", requestOptions)
         .then((res) => res.json())
         .then((data) => {
@@ -104,12 +105,12 @@ export default function MainHeader() {
                   })
                   .then(() => {
                     console.log("Complete store assignment");
-                    setToastText("Complete Crawling! Please reload page.");
+                    setToastText("Complete Crawling! Please Reload Page!");
                     setShow(true);
                   });
               });
           } else {
-            setToastText("Login Failed! Please retry crawling.");
+            setToastText("Login Failed! Please Retry Crawling!");
             setShow(true);
           }
         });
