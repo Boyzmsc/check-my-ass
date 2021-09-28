@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {firestore} from "../../services/firebase";
-import "./BtnTimer.scss";
+import "./btnTimer.scss";
 
 function BtnTimer(props) {
   const task = props.task;

@@ -4,7 +4,7 @@ import {firestore} from "../../services/firebase";
 import LecPieChart from "./LecChart";
 import AssPieChart from "./AssChart";
 import AssCalendar from "./AssCalendar";
-import "./Dashboard.scss";
+import "./dashboard.scss";
 
 const moment = require("moment");
 

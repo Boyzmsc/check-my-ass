@@ -6,7 +6,7 @@ import {FaRegFolder, FaRegClock} from "react-icons/fa";
 import Header from "./Header";
 import BtnTimer from "./BtnTimer";
 import DeleteTaskBtn from "./Action/Delete";
-import "./Task.scss";
+import "./task.scss";
 
 const moment = require("moment");
 

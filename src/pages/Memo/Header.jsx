@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {FaRegArrowAltCircleUp, FaRegArrowAltCircleDown} from "react-icons/fa";
 
 import NewMemoBtn from "./Action/Add";
-import "./Header.scss";
+import "./header.scss";
 
 const Header = (props) => {
   const [sortSeq, setSortSeq] = useState(true);

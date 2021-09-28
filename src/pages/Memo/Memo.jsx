@@ -3,7 +3,7 @@ import {firestore} from "../../services/firebase";
 
 import Header from "./Header";
 import MemoTable from "./MemoTable";
-import "./Memo.scss";
+import "./memo.scss";
 
 const Memo = (props) => {
   const userId = props.userId;

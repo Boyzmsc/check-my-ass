@@ -23,7 +23,7 @@ import {
 } from "react-pro-sidebar";
 
 import "react-pro-sidebar/dist/css/styles.css";
-import "./SideBar.scss";
+import "./sidebar.scss";
 
 export default function SideBar() {
   return (

@@ -6,7 +6,7 @@ import DeleteMemoBtn from "./Action/Delete";
 import CheckMemoBtn from "./Action/Check";
 import ReadMore from "./Action/Read";
 
-import "./MemoTable.scss";
+import "./memoTable.scss";
 
 const moment = require("moment");
 

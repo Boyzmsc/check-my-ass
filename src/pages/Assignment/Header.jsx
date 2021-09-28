@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {FaRegArrowAltCircleUp, FaRegArrowAltCircleDown} from "react-icons/fa";
 
 import DatePicker from "./DatePicker";
-import "./Header.scss";
+import "./header.scss";
 
 const Header = (props) => {
   // const [sortSeq, setSortSeq] = useState("asc");

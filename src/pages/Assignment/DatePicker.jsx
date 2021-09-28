@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import {FaAngleDoubleRight} from "react-icons/fa";
 
 import "react-datepicker/dist/react-datepicker.css";
-import "./Datepicker.scss";
+import "./datepicker.scss";
 
 const moment = require("moment");
 
