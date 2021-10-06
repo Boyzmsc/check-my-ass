@@ -5,6 +5,7 @@ import {useHistory} from "react-router";
 import {firestore} from "../../services/firebase";
 import {Toast} from "react-bootstrap";
 import {Form} from "react-bootstrap";
+import axios from "axios";
 
 import "./MainHeader.scss";
 
@@ -42,24 +43,22 @@ export default function MainHeader() {
       setToastText("Login Failed! Please Retry Crawling!");
       setShow(true);
     } else {
-      const requestOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+      // Fetch data & Reset firestore
+      axios
+        .post("http://localhost:5000/api", {
           univ: u,
           loginId: id,
           loginPwd: pwd,
-        }),
-      };
-
-      // Fetch data & Reset firestore
-      // fetch("https://server-cma.herokuapp.com/api", requestOptions)
-      fetch("http://localhost:7777/api", requestOptions)
-        .then((res) => res.json())
-        .then((data) => {
+        })
+        // axios
+        //   .post("https://cmaserver.herokuapp.com/api", {
+        //     univ: u,
+        //     loginId: id,
+        //     loginPwd: pwd,
+        //   })
+        .then((res) => {
           console.log("Complete fetch data");
+          let data = res.data;
           if (data !== false) {
             // Delete & Store lecture
             firestore
