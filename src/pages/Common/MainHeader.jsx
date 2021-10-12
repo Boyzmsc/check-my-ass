@@ -44,6 +44,8 @@ export default function MainHeader() {
       setShow(true);
     } else {
       // Fetch data & Reset firestore
+      setToastText("Crawling Start! Please Wait A Few Seconds...");
+      setShow(true);
       axios
         .post("http://localhost:5000/api", {
           univ: u,
@@ -57,9 +59,11 @@ export default function MainHeader() {
         //     loginPwd: pwd,
         //   })
         .then((res) => {
-          console.log("Complete fetch data");
           let data = res.data;
-          if (data !== false) {
+          if (data[0].length == 0 || data[1].length == 0) {
+            setToastText("Crawling Failed! Please Retry Crawling!");
+            setShow(true);
+          } else if (data !== false) {
             // Delete & Store lecture
             firestore
               .collection("users")
@@ -81,7 +85,6 @@ export default function MainHeader() {
                 }
               })
               .then(() => {
-                console.log("Complete store lecture");
                 // Delete & Store assignment
                 firestore
                   .collection("users")
@@ -103,7 +106,6 @@ export default function MainHeader() {
                     }
                   })
                   .then(() => {
-                    console.log("Complete store assignment");
                     setToastText("Complete Crawling! Please Reload Page!");
                     setShow(true);
                   });
