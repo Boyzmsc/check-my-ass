@@ -52,18 +52,19 @@ export default function MainHeader() {
           loginId: id,
           loginPwd: pwd,
         })
-        // axios
-        //   .post("https://cmaserver.herokuapp.com/api", {
-        //     univ: u,
-        //     loginId: id,
-        //     loginPwd: pwd,
-        //   })
         .then((res) => {
           let data = res.data;
+
+          if (data == false) {
+            setToastText("Login Failed! Please Retry Crawling!");
+            setShow(true);
+            return;
+          }
+
           if (data[0].length == 0 || data[1].length == 0) {
             setToastText("Crawling Failed! Please Retry Crawling!");
             setShow(true);
-          } else if (data !== false) {
+          } else {
             // Delete & Store lecture
             firestore
               .collection("users")
@@ -110,9 +111,6 @@ export default function MainHeader() {
                     setShow(true);
                   });
               });
-          } else {
-            setToastText("Login Failed! Please Retry Crawling!");
-            setShow(true);
           }
         });
     }
