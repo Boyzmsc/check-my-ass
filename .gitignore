@@ -1,21 +1,13 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# setting
+.netlify
+.vscode
 
 # test
 test*.jsx
 test*.js
 
-# server
-server/server.js
-
-# crawling
-crawling.js
-chromedriver.exe
-
 # firebase
-*.json
-.firebase
-.firebaserc
-firestore.rules
+src/services/*.json
 
 # production
 /build
