@@ -30,14 +30,14 @@
 <br />
 
 * Assignment
-    * Check Assignment from KMU E-campus
+    * Check Assignment from KMU E-Campus
     * Sort & Filter Func
     * Calendar Search Func
 
 <br />
 
 * Task
-    * Check Assignment Except from KMU E-campus
+    * Check Assignment Except from KMU E-Campus
     * Sort & Filter Func
     * Calendar Search Func
 
@@ -49,9 +49,10 @@
 <br />
 
 * Sync
-    * Synchronize Data from KMU E-campus
+    * Synchronize Data from KMU E-Campus
 
 ## Link
 
 * [https://check-my-ass.netlify.app](https://check-my-ass.netlify.app)
-* **This website only works for KMU E-campus**
+* This website only works for KMU E-Campus
+* Download Release
