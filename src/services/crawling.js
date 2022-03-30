@@ -28,8 +28,8 @@ module.exports = async function (univ, loginId, loginPwd) {
   options.headless().windowSize(screen);
   options.addArguments("--no-sandbox");
   options.addArguments("--disable-gpu");
-  // options.addArguments("--disable-dev-shm-usage");
-  // options.addArguments("--remote-debugging-port=9222");
+  options.addArguments("--disable-dev-shm-usage");
+  options.addArguments("--remote-debugging-port=9222");
 
   const driver = await new webdriver.Builder()
     .forBrowser("chrome")
@@ -45,6 +45,9 @@ module.exports = async function (univ, loginId, loginPwd) {
   await driver.findElement(By.name("loginPwd")).sendKeys(loginPwd);
   await driver.findElement(By.name("loginbutton")).sendKeys(Key.ENTER);
 
+  // For successful crawling
+  var ele = driver.findElements(By.className("course-link"));
+
   let courses_cnt;
   try {
     await driver
@@ -55,6 +58,7 @@ module.exports = async function (univ, loginId, loginPwd) {
       )
       .then((data) => {
         courses_cnt = data.length;
+        console.log(data.length)
       });
   } catch (e) {
     console.log("Login Failed");
