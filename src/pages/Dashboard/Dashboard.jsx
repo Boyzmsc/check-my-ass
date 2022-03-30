@@ -125,8 +125,13 @@ const Dashboard = (props) => {
   let checkLec = [];
   for (var i = 0; i < lecName.length; i++) {
     let obj = {};
-    obj["id"] = lecName[i].substr(0,4);
-    obj["label"] = lecName[i].substr(0,4);
+    if (lecName[i].length > 5){
+      obj["id"] = lecName[i].substr(0,4) + "...";
+      obj["label"] = lecName[i].substr(0,4) + "...";  
+    }else{
+      obj["id"] = lecName[i];
+      obj["label"] = lecName[i];  
+    }
     obj["value"] = cntAss[i];
     checkLec.push(obj);
   }
