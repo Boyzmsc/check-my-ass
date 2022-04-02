@@ -14,7 +14,7 @@ const DatePickerComponent = (props) => {
   );
   const [endDate, setEndDate] = useState(
     new Date(
-      initDate(new Date().setMonth(new Date().getMonth() + 3)) + "23:59:59",
+      initDate(new Date().setMonth(new Date().getMonth() + 1)) + "23:59:59",
     ),
   );
 
