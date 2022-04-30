@@ -25,11 +25,11 @@ module.exports = async function (univ, loginId, loginPwd) {
   chrome.setDefaultService(service);
 
   var options = new chrome.Options();
-  options.headless().windowSize(screen);
-  options.addArguments("--no-sandbox");
-  options.addArguments("--disable-gpu");
-  options.addArguments("--disable-dev-shm-usage");
-  options.addArguments("--remote-debugging-port=9222");
+  // options.headless().windowSize(screen);
+  // options.addArguments("--no-sandbox");
+  // options.addArguments("--disable-gpu");
+  // options.addArguments("--disable-dev-shm-usage");
+  // options.addArguments("--remote-debugging-port=9222");
 
   const driver = await new webdriver.Builder()
     .forBrowser("chrome")
@@ -58,7 +58,7 @@ module.exports = async function (univ, loginId, loginPwd) {
       )
       .then((data) => {
         courses_cnt = data.length;
-        console.log(data.length)
+        console.log(data.length);
       });
   } catch (e) {
     console.log("Login Failed");
@@ -104,17 +104,20 @@ module.exports = async function (univ, loginId, loginPwd) {
 
     let btn_link_list = await driver.findElements(By.className("btn-link"));
 
+    let btn_link, btn_link_txt;
     for (var i = 0; i < btn_link_list.length; i++) {
-      var btn_link = await btn_link_list[i];
-      var btn_link_txt = await btn_link.getText();
+      btn_link = await btn_link_list[i];
+      btn_link_txt = await btn_link.getText();
       if (btn_link_txt === "과제") {
         hasAss = true;
-        await btn_link.sendKeys(Key.ENTER);
         break;
       }
     }
 
     if (hasAss) {
+      await btn_link.sendKeys(Key.ENTER);
+      await driver.sleep(2000);
+
       let ass_names = await driver.findElements(
         By.css("td[class = 'cell c1']"),
       );
